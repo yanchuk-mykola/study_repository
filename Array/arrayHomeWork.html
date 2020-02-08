@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    var arrayArrays = [
+        [[1, 34, -45, 32, 0], [192, -23, 32, 5, 93], [-45, 65, 21, 56, 8], [2, 23, 54, -254, 42], [-1, 34, 6, 23, 1]],
+        [[45, 12, -5, 2, 76], [105, -321, 12, 576, 43], [-125, 35, 241, 86, 238], [64, 213, 234, -54, 412], [-1, 23, 62, 23, 11]],
+        [[121, 334, -43, 32, 122], [292, -213, 12, 5, 923], [-45, 625, 2, 5, 8], [2, 2, 4, -2, 2], [-321, 334, 621, 233, 132]],
+        [[23, 14, -145, 322, 10], [2, -3, 32, 75, 932], [-41, 265, 521, 356, 8], [1, 223, 354, 254, 412], [-12, 134, 26, 213, 21]],
+        [[1, 334, -415, 42, 102], [132, -233, 325, 55, 3], [-485, 965, 721, 536, 38], [2, 3, 354, -41, 423], [-1, 314, 63, 23, 31]],
+    ];
+
+    var newArray = [];
+    arrayArrays.forEach(function (itemList) {
+        itemList.forEach(function (items) {
+            items.forEach(function (item) {
+                newArray.push(item);
+            })
+        })
+    });
+
+    // console.log(newArray);
+
+
+    var threefoldArray = newArray.map(function (item) {
+        return (item * 3) / 2;
+    });
+
+    //console.log(threefoldArray);
+
+    threefoldArray.sort(function (a, b) {
+        if (a > b){
+            return 1;
+        }
+
+        if (a < b){
+            return -1;
+        }
+        return 0;
+    });
+
+    //console.log(threefoldArray);
+
+    var positiveValue = threefoldArray.filter(function (item) {
+        return item > 0;
+    });
+
+    //console.log(positiveValue);
+
+    var negativeValue = threefoldArray.filter(function (item) {
+        return item < 0;
+    });
+
+    var positiveValue2 = negativeValue.map(function (item) {
+        return item * -1;
+    });
+
+    //console.log(positiveValue2);
+
+    var fullPositiveValueArray = positiveValue.concat(positiveValue2).sort(function (a, b) {
+        if (a > b){
+            return 1;
+        }
+
+        if (a < b){
+            return -1;
+        }
+        return 0;
+    });
+
+    //console.log(fullPositiveValueArray);
+
+    var sumFullNumberArrays = fullPositiveValueArray.reduce(function (a, b) {
+        return a + b;
+    });
+
+    //console.log(sumFullNumberArrays);
+
+    //==================================================================================================================
+
+
+    var array = [
+
+    ]
+    
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title1</title>
+</head>
+<body>
+    <script>
+
+        var wins = [
+            [12, 23, 42],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6],
+            [0, 1, 2]
+        ];
+
+        wins.forEach(function (itemsList) {
+            itemsList.forEach(function (item) {
+                console.log(item);
+            });
+        });
+
+
+
+        function setEvenNumbers(){
+            var wins2 = [];
+
+            wins.forEach(function (items) {
+                wins2.push(items.filter(function (item) {
+                    return (item % 2) === 0;
+
+                }));
+
+            });
+            return wins2;
+        }
+        // setEvenNumbers();
+
+        console.log(setEvenNumbers());
+
+        function setSimpleArray(){
+            return setEvenNumbers().toString().split(',').filter(function (number) {
+                return number !== '';
+            });
+        }
+
+        // console.log(setSimpleArray());
+
+
+        function setUnicArray() {
+            var winsUnic = [];
+
+            setSimpleArray().forEach(function (currentValue) {
+                if (!winsUnic.includes(+currentValue))
+                    winsUnic.push(+currentValue);
+            });
+            return winsUnic;
+        }
+
+        // console.log(setUnicArray());
+
+        function sortArray() {
+             return  setUnicArray().sort(function (a, b) {
+                return a - b;
+            });
+        }
+
+        //console.log(sortArray());
+
+        //
+        // console.log(winsUnic);
+        //
+        // var array = [1, 4, 65, 43, 12];
+        //
+        // array = array.map(function (item) {
+        //     return item * 2;
+        // });
+        //
+        // console.log(array);
+
+
+
+    </script>
+</body>
+</html>
